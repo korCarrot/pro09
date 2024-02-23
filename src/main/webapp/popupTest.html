@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+window.onload = function(){
+	// alert("hi");
+	var notShowPop = getCookieValue()
+	console.log(notShowPop)
+	if(notShowPop != "true"){
+		window.open("popup.html", "창의 제목?", "width=450, height=500");
+	}
+	//window.open("popup.html", "width=400, height=500");	//팝업창 적용이 안됨
+	//window.open("popup.html", width=400, height=500); //고정된 크기 팝업창
+	// window.open("popup.html", "창의 제목?", "width=450, height=500");	//팝업창
+	
+	
+}
+
+//쿠키 읽어오는 함수
+
+function getCookieValue(){
+
+	var result="false"
+	console.log(result)
+	//쿠키 여부 확인
+	console.log("현재 쿠키", document.cookie)
+	if(document.cookie != ""){
+		for(var i=0; i<cookie.length;i++){
+
+			Element=cookie[i].split("=")
+			value=Element[0]
+			value=value.replace(/^\s*/,'')	 //자바스크립트 정규 표현식 첫 글자가 공백s(space)이 있으면 제거
+			if(value == "notShowPop"){
+				result=element[1];
+			}
+		}
+
+	}
+
+	return result;
+}
+
+
+
+</script>
+</head>
+<body>
+팝업창 나와라
+</body>
+</html>

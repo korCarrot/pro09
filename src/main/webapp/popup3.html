@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function setPopUpDown(obj){
+	if(obj.checked==true){
+		var expireDate=new Date();
+		console.log("new Date",expireDate) //현재 시간
+		var days = 1;
+		expireDate.setDate(expireDate.getDate()+days);
+		console.log("setDate", expireDate)	//현재 시간에 days를 더한 날짜
+	}
+}
+
+</script>
+</head>
+<body>
+<input type="checkbox" onclick="setPopUpDown(this)"> 오늘은 더 이상 팝업창 띄우지 않을거야
+</body>
+</html>
